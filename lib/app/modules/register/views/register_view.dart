@@ -21,139 +21,142 @@ class RegisterView extends GetView<RegisterController> {
         forceMaterialTransparency: true,
         titleTextStyle: AppTextStyles.headingAppBar,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: SingleChildScrollView(
-          child: Form(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 32.0),
-                  child: Text(
-                    'Selamat datang, silakan isi data diri Anda',
-                    style: AppTextStyles.bodyLight,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                CustomTextField(
-                  labelText: 'Nama Lengkap',
-                  hintText: 'Masukan nama lengkap',
-                  controller: TextEditingController(),
-                  keyboardType: TextInputType.name,
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: SvgPicture.asset(
-                      'assets/images/user_icon.svg',
-                      width: 24.w,
-                      fit: BoxFit.scaleDown,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: SingleChildScrollView(
+            child: Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 32.0),
+                    child: Text(
+                      'Selamat datang, silakan isi data diri Anda',
+                      style: AppTextStyles.bodyLight,
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  textInputAction: TextInputAction.next,
-                ),
-                SizedBox(height: 28.h),
-                CustomTextField(
-                  labelText: 'Email',
-                  hintText: 'Masukan email',
-                  controller: TextEditingController(),
-                  keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icon(
-                    Icons.alternate_email,
-                    color: AppColors.primary,
-                  ),
-                  textInputAction: TextInputAction.next,
-                ),
-                SizedBox(height: 28.h),
-                Obx(
-                  () => CustomTextField(
-                    labelText: 'Kata Sandi',
-                    hintText: 'Buat kata sandi',
-                    keyboardType: TextInputType.visiblePassword,
+                  CustomTextField(
+                    labelText: 'Nama Lengkap',
+                    hintText: 'Masukan nama lengkap',
+                    controller: TextEditingController(),
+                    keyboardType: TextInputType.name,
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: SvgPicture.asset(
+                        'assets/images/user_icon.svg',
+                        width: 24.w,
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
                     textInputAction: TextInputAction.next,
-                    controller: controller.passwordController,
-                    obscureText: controller.isObscure.value,
-                    prefixIcon: Icon(Icons.lock, color: AppColors.primary),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        controller.isObscure.value
-                            ? Icons.visibility_off_rounded
-                            : Icons.visibility_rounded,
-                        color: AppColors.primary,
-                      ),
-                      onPressed: controller.toggle,
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
-                      }
-                      return null;
-                    },
                   ),
-                ),
-                SizedBox(height: 28.h),
-                Obx(
-                  () => CustomTextField(
-                    labelText: 'Konfirmasi Kata Sandi',
-                    hintText: 'Konfirmasi kata sandi',
-                    keyboardType: TextInputType.visiblePassword,
-                    controller: controller.passwordController,
-                    textInputAction: TextInputAction.done,
-                    obscureText: controller.isObscure.value,
-                    prefixIcon: Icon(Icons.lock, color: AppColors.primary),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        controller.isObscure.value
-                            ? Icons.visibility_off_rounded
-                            : Icons.visibility_rounded,
-                        color: AppColors.primary,
-                      ),
-                      onPressed: controller.toggle,
+                  SizedBox(height: 28.h),
+                  CustomTextField(
+                    labelText: 'Email',
+                    hintText: 'Masukan email',
+                    controller: TextEditingController(),
+                    keyboardType: TextInputType.emailAddress,
+                    prefixIcon: Icon(
+                      Icons.alternate_email,
+                      color: AppColors.primary,
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
-                      }
-                      return null;
-                    },
+                    textInputAction: TextInputAction.next,
                   ),
-                ),
-                SizedBox(height: 50.h),
-                CustomButton(
-                  text: 'Buat Akun',
-                  onPressed: () {},
-                  backgroundColor: AppColors.mainBlack,
-                  borderRadius: 64,
-                  textStyle: AppTextStyles.label.copyWith(
-                    color: AppColors.light,
-                    fontSize: 18.sp,
-                  ),
-                ),
-                SizedBox(height: 24.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      ' Sudah mempunyai akun?',
-                      style: AppTextStyles.label.copyWith(
-                        color: AppColors.mainBlack,
-                        fontSize: 12.sp,
+                  SizedBox(height: 28.h),
+                  Obx(
+                    () => CustomTextField(
+                      labelText: 'Kata Sandi',
+                      hintText: 'Buat kata sandi',
+                      keyboardType: TextInputType.visiblePassword,
+                      textInputAction: TextInputAction.next,
+                      controller: controller.passwordController,
+                      obscureText: controller.isObscure.value,
+                      prefixIcon: Icon(Icons.lock, color: AppColors.primary),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          controller.isObscure.value
+                              ? Icons.visibility_off_rounded
+                              : Icons.visibility_rounded,
+                          color: AppColors.primary,
+                        ),
+                        onPressed: controller.toggle,
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.toNamed('/login');
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
                       },
-                      child: Text(
-                        ' Masuk',
-                        style: AppTextStyles.labelBold.copyWith(
-                          decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  SizedBox(height: 28.h),
+                  Obx(
+                    () => CustomTextField(
+                      labelText: 'Konfirmasi Kata Sandi',
+                      hintText: 'Konfirmasi kata sandi',
+                      keyboardType: TextInputType.visiblePassword,
+                      controller: controller.passwordController,
+                      textInputAction: TextInputAction.done,
+                      obscureText: controller.isObscure.value,
+                      prefixIcon: Icon(Icons.lock, color: AppColors.primary),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          controller.isObscure.value
+                              ? Icons.visibility_off_rounded
+                              : Icons.visibility_rounded,
+                          color: AppColors.primary,
+                        ),
+                        onPressed: controller.toggle,
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 50.h),
+                  CustomButton(
+                    text: 'Buat Akun',
+                    onPressed: () {},
+                    backgroundColor: AppColors.mainBlack,
+                    borderRadius: 64,
+                    textStyle: AppTextStyles.label.copyWith(
+                      color: AppColors.light,
+                      fontSize: 18.sp,
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        ' Sudah mempunyai akun?',
+                        style: AppTextStyles.label.copyWith(
+                          color: AppColors.mainBlack,
                           fontSize: 12.sp,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/login');
+                        },
+                        child: Text(
+                          ' Masuk',
+                          style: AppTextStyles.labelBold.copyWith(
+                            decoration: TextDecoration.underline,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
