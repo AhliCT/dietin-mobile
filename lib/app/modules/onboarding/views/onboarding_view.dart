@@ -1,3 +1,4 @@
+import 'package:dietin/app/shared/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dietin/app/shared/constants/constant.dart';
@@ -58,11 +59,22 @@ class OnboardingView extends GetView<OnboardingController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 55.h),
-                  Text('Makan Cerdas!'),
+                  Text('Makan Cerdas!', style: AppTextStyles.onboardBigTitle,),
                   SizedBox(height: 19.h),
-                  Text('Nikmati hidup lebih seimbang dengan pola makan yang teratur.', textAlign: TextAlign.center,),
+                  Text('Nikmati hidup lebih seimbang dengan pola makan yang teratur.', textAlign: TextAlign.center, style: AppTextStyles.onboardBigSubtitle,),
                   SizedBox(height: 78.h,),
-                  
+                  CustomButton(
+                    text: 'Mulai',
+                    onPressed: () {
+                      Get.offNamed('/login');
+                    },
+                    backgroundColor: AppColors.mainBlack,
+                    borderRadius: 64,
+                    textStyle: AppTextStyles.label.copyWith(
+                      color: AppColors.light,
+                      fontSize: 18.sp,
+                    ),
+                  ),
                 ],
               ),
             ),
