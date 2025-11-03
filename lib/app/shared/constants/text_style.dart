@@ -14,4 +14,14 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.mainBlack,
   );
+  static TextStyle get onboardBigTitle => GoogleFonts.plusJakartaSans(
+    fontSize: 31.83.sp,
+    fontWeight: FontWeight.w800,
+    color: AppColors.mainBlack,
+  );
+  static TextStyle get onboardBigSubtitle => GoogleFonts.plusJakartaSans(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainBlack,
+  );
 }
