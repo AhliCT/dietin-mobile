@@ -1,8 +1,8 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
-  //TODO: Implement LoginController
+class InitialhealthController extends GetxController {
+  //TODO: Implement InitialhealthController
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
