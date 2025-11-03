@@ -41,7 +41,7 @@ class RegisterView extends GetView<RegisterController> {
                   CustomTextField(
                     labelText: 'Nama Lengkap',
                     hintText: 'Masukan nama lengkap',
-                    controller: TextEditingController(),
+                    controller: controller.nameController,
                     keyboardType: TextInputType.name,
                     prefixIcon: Padding(
                       padding: EdgeInsets.all(12.0),
@@ -57,7 +57,7 @@ class RegisterView extends GetView<RegisterController> {
                   CustomTextField(
                     labelText: 'Email',
                     hintText: 'Masukan email',
-                    controller: TextEditingController(),
+                    controller: controller.emailController,
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: Icon(
                       Icons.alternate_email,
@@ -98,7 +98,7 @@ class RegisterView extends GetView<RegisterController> {
                       labelText: 'Konfirmasi Kata Sandi',
                       hintText: 'Konfirmasi kata sandi',
                       keyboardType: TextInputType.visiblePassword,
-                      controller: controller.passwordController,
+                      controller: controller.confirmPasswordController,
                       textInputAction: TextInputAction.done,
                       obscureText: controller.isObscure.value,
                       prefixIcon: Icon(Icons.lock, color: AppColors.primary),
@@ -143,7 +143,7 @@ class RegisterView extends GetView<RegisterController> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Get.toNamed('/login');
+                          Get.back();
                         },
                         child: Text(
                           ' Masuk',

@@ -79,11 +79,14 @@ class LoginView extends GetView<LoginController> {
                             ),
                           ),
                           SizedBox(height: 32.h),
-                          Text(
-                            'Lupa kata sandi?',
-                            style: AppTextStyles.label.copyWith(
-                              color: AppColors.mainBlack,
-                              fontSize: 12.sp,
+                          GestureDetector(
+                            onTap: () => Get.toNamed('/forgot-password'),
+                            child: Text(
+                              'Lupa kata sandi?',
+                              style: AppTextStyles.label.copyWith(
+                                color: AppColors.mainBlack,
+                                fontSize: 12.sp,
+                              ),
                             ),
                           ),
                         ],

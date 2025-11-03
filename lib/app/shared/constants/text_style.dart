@@ -27,6 +27,7 @@ class AppTextStyles {
   static TextStyle get inputText => GoogleFonts.plusJakartaSans(
     fontSize: 14.sp,
     fontWeight: FontWeight.normal,
+  );
   static TextStyle get onboardBigTitle => GoogleFonts.plusJakartaSans(
     fontSize: 31.83.sp,
     fontWeight: FontWeight.w800,
