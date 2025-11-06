@@ -6,6 +6,8 @@ import '../modules/forgot_password/bindings/forgot_password_binding.dart';
 import '../modules/forgot_password/views/forgot_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/initialhealth/bindings/initialhealth_binding.dart';
+import '../modules/initialhealth/views/initialhealth_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -45,7 +47,7 @@ class AppPages {
       page: () => const LoginView(),
       binding: LoginBinding(),
       transition: Transition.downToUp,
-      transitionDuration: Duration(milliseconds: 1400),
+      transitionDuration: Duration(milliseconds: 1200),
       curve: Curves.easeOut,
     ),
     GetPage(
@@ -53,6 +55,14 @@ class AppPages {
       page: () => const RegisterView(),
       binding: RegisterBinding(),
     ),
+    GetPage(
+      name: _Paths.INITIALHEALTH,
+      page: () => const InitialhealthView(),
+      binding: InitialhealthBinding(),
+      transition: Transition.downToUp,
+      transitionDuration: Duration(milliseconds: 1200),
+      curve: Curves.easeOut,
+  ),
     GetPage(
       name: _Paths.FORGOT_PASSWORD,
       page: () => const ForgotPasswordView(),

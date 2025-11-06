@@ -16,9 +16,10 @@ class LoginView extends GetView<LoginController> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        backgroundColor: AppColors.mainWhite,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0.w),
             child: SingleChildScrollView(
               child: SizedBox(
                 height:
@@ -96,7 +97,9 @@ class LoginView extends GetView<LoginController> {
                       children: [
                         CustomButton(
                           text: 'Masuk',
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.offNamed('/initialhealth');
+                          },
                           backgroundColor: AppColors.mainBlack,
                           borderRadius: 64,
                           textStyle: AppTextStyles.label.copyWith(
