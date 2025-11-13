@@ -1,3 +1,5 @@
+import 'package:dietin/app/modules/home/controllers/home_controller.dart';
+import 'package:dietin/app/modules/home/views/home_view.dart';
 import 'package:dietin/app/shared/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +13,10 @@ class BotnavbarView extends GetView<BotnavbarController> {
   const BotnavbarView({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => HomeController(), fenix: true);
+
     final List<Widget> pages = [
-      Container(color: Colors.red),
+      HomeView(),
       Container(color: Colors.green),
       Container(color: Colors.blue),
       Container(color: Colors.yellow),
@@ -20,12 +24,11 @@ class BotnavbarView extends GetView<BotnavbarController> {
     ];
     return Obx(
       () => Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: AppColors.secondaryWhite,
         body: pages[controller.currentIndex.value],
-        bottomNavigationBar: Container(
+        bottomNavigationBar: SizedBox(
           width: 1.sw,
           height: 100.h,
-          color: Colors.blueAccent,
           child: Stack(
             children: [
               Positioned(

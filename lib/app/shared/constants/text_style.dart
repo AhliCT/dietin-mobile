@@ -48,4 +48,34 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.primary,
   );
+  static TextStyle get bodySmall => GoogleFonts.plusJakartaSans(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainBlack,
+  );
+  static TextStyle get bodySmallSemiBold => GoogleFonts.plusJakartaSans(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.mainBlack,
+  );
+  static TextStyle get calorieActive => GoogleFonts.plusJakartaSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.calorie,
+  );
+  static TextStyle get calorieInactive => GoogleFonts.plusJakartaSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.calorie,
+  );
+  static TextStyle get carbsActive => GoogleFonts.plusJakartaSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.carbs,
+  );
+  static TextStyle get carbsInactive => GoogleFonts.plusJakartaSans(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.carbs,
+  );
 }
