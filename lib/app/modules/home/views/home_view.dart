@@ -278,7 +278,9 @@ class HomeView extends GetView<HomeController> {
                                 radius: 25.r,
                                 backgroundColor: AppColors.primary,
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.toNamed('/search-food');
+                                  },
                                   icon: Icon(
                                     Icons.add_rounded,
                                     color: AppColors.mainWhite,

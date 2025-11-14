@@ -13,6 +13,7 @@ abstract class Routes {
   static const INITIALHEALTH = _Paths.INITIALHEALTH;
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
   static const BOTNAVBAR = _Paths.BOTNAVBAR;
+  static const SEARCH_FOOD = _Paths.SEARCH_FOOD;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const INITIALHEALTH = '/initialhealth';
   static const FORGOT_PASSWORD = '/forgot-password';
   static const BOTNAVBAR = '/botnavbar';
+  static const SEARCH_FOOD = '/search-food';
 }

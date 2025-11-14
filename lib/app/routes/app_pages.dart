@@ -16,6 +16,8 @@ import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/search_food/bindings/search_food_binding.dart';
+import '../modules/search_food/views/search_food_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -74,6 +76,11 @@ class AppPages {
       name: _Paths.BOTNAVBAR,
       page: () => const BotnavbarView(),
       binding: BotnavbarBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_FOOD,
+      page: () => const SearchFoodView(),
+      binding: SearchFoodBinding(),
     ),
   ];
 }

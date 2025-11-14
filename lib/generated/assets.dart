@@ -2,8 +2,10 @@
 class Assets {
   Assets._();
 
+  static const String imagesArrowUpLeftIc = 'assets/images/arrow_up_left_ic.svg';
   static const String imagesCarbIc = 'assets/images/carb_ic.png';
   static const String imagesCmIc = 'assets/images/cm_ic.png';
+  static const String imagesEmptyImg = 'assets/images/empty_img.png';
   static const String imagesFatIc = 'assets/images/fat_ic.png';
   static const String imagesFemaleIc = 'assets/images/female_ic.png';
   static const String imagesFireIc = 'assets/images/fire_ic.png';
@@ -11,6 +13,7 @@ class Assets {
   static const String imagesGreenLeftImg = 'assets/images/green_left_img.png';
   static const String imagesGreenRightImg = 'assets/images/green_right_img.png';
   static const String imagesHandIc = 'assets/images/hand_ic.png';
+  static const String imagesHistoryIc = 'assets/images/history_ic.svg';
   static const String imagesHomeActIc = 'assets/images/home_act_ic.svg';
   static const String imagesHomeInacIc = 'assets/images/home_inac_ic.svg';
   static const String imagesInfoIc = 'assets/images/info_ic.png';
@@ -25,6 +28,7 @@ class Assets {
   static const String imagesProfileInacIc = 'assets/images/profile_inac_ic.svg';
   static const String imagesProteinIc = 'assets/images/protein_ic.png';
   static const String imagesScanIc = 'assets/images/scan_ic.svg';
+  static const String imagesSearchIc = 'assets/images/search_ic.svg';
   static const String imagesStatsActIc = 'assets/images/stats_act_ic.svg';
   static const String imagesStatsInacIc = 'assets/images/stats_inac_ic.svg';
   static const String imagesSunIc = 'assets/images/sun_ic.svg';
