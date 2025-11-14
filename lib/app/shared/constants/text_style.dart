@@ -9,6 +9,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.mainBlack,
   );
+  static TextStyle get labelSearch => GoogleFonts.plusJakartaSans(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainBlack,
+  );
   static TextStyle get labelBold => GoogleFonts.plusJakartaSans(
     fontSize: 16.sp,
     fontWeight: FontWeight.bold,
