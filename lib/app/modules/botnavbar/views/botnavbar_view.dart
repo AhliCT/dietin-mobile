@@ -20,9 +20,9 @@ class BotnavbarView extends GetView<BotnavbarController> {
 
     final List<Widget> pages = [
       HomeView(),
+      MealsView(),
       Container(color: Colors.green),
       Container(color: Colors.blue),
-      MealsView(),
       Container(color: Colors.black),
     ];
     return Obx(
